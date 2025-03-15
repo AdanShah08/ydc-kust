@@ -962,7 +962,6 @@ body {
 /* Testimonial Card */
 .testimonial-card {
     border-radius: 10px;
-    transition: all 0.3s ease-in-out;
     background: white;
     border: none;
     padding: 25px;
@@ -971,12 +970,12 @@ body {
     overflow: hidden;
     opacity: 0; /* Initially hidden */
     transform: translateY(20px);
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* Hover Effect */
+/* Hover Effect (Fixed) */
 .testimonial-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(0px) scale(1.03);
     box-shadow: 0px 10px 25px rgba(0, 123, 255, 0.3);
 }
 
@@ -1025,6 +1024,7 @@ body {
         font-size: 2rem;
     }
 }
+
 
 
 /* ----------------------------Contact us---------------------------------------- */
