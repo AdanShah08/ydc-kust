@@ -1380,19 +1380,38 @@ iframe {
 }
 
 /* ================= Footer Bottom ================= */
+.footer-bottom {
+    
+    color: #ccc;
+    padding: 15px 0;
+    text-align: center;
+}
+
+/* Centering Footer Content */
+.footer .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Footer Links Styling */
+.footer-bottom a.footer-link {
+    color: (--primary); /* New color for YDC KUST and AdanShah */
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-bottom a.footer-link:hover {
+    color: #ff5733; /* Updated hover color */
+}
+
+/* Footer HR Styling */
 .footer hr {
     width: 90%;
     margin: 20px auto;
     border: 0;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* Footer Bottom Styling */
-.footer-bottom {
-    background: #111;
-    color: #ccc;
-    padding: 15px 0;
-    text-align: center;
 }
 
 /* Footer Menu */
