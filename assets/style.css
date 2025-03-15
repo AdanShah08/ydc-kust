@@ -931,6 +931,100 @@ body {
 }
 
 
+/*------------------------------ Testimonial Section -------------------------*/
+/* Testimonial Section */
+.testimonial-section {
+    background: #f8f9fa;
+    padding: 60px 0;
+    overflow: hidden;
+}
+
+.testimonial-section h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+}
+
+.testimonial-section h1::after {
+    content: "";
+    width: 60px;
+    height: 3px;
+    background: #007bff;
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Testimonial Card */
+.testimonial-card {
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    background: white;
+    border: none;
+    padding: 25px;
+    box-shadow: 0px 5px 15px rgba(0, 123, 255, 0.15);
+    position: relative;
+    overflow: hidden;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/* Hover Effect */
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 25px rgba(0, 123, 255, 0.3);
+}
+
+/* Testimonial Image */
+.testimonial-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.testimonial-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Name & Role */
+.testimonial-card h6 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 2px;
+    transition: color 0.3s ease-in-out;
+}
+
+.testimonial-card:hover h6 {
+    color: #007bff;
+}
+
+/* Testimonial Text */
+.testimonial-card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+    margin-top: 15px;
+}
+
+/* Slide-in Effect */
+.testimonial-card.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .testimonial-section h1 {
+        font-size: 2rem;
+    }
+}
 
 
 /* ----------------------------Contact us---------------------------------------- */
