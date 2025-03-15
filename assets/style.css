@@ -1,0 +1,1281 @@
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;700&display=swap');
+
+/* Spinner Container */
+#spinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.79);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+/* Hide Spinner After Page Loads */
+#spinner.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* YDC Text Animation */
+.fade-text {
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    animation: fade 1.5s infinite ease-in-out;
+}
+
+/* Smooth Fade-In & Out Animation */
+@keyframes fade {
+    0% { opacity: 0; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.9); }
+}
+
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #f8f9fa;
+}
+/* Navbar dropdown arrow */
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+/* Navbar link styles */
+.navbar-light .navbar-nav .nav-link {
+    margin-right: 30px;
+    padding: 15px 20px;
+    color: #040406;
+    font-size: 15px;
+    text-transform: uppercase;
+    outline: none;
+    position: relative;
+    transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+    border-radius: 5px; /* Rounded corners for smooth effect */
+}
+
+/* Hover and active state with blue-themed effect */
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: white;
+    background: linear-gradient(135deg, #3a46b0, #2509f9); 
+    box-shadow: 0px 4px 15px rgba(37, 9, 249, 0.4); 
+}
+
+/* Navbar shadow effect */
+.navbar {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+    background: white; 
+}
+
+/* Join Now Button */
+.navbar-light .btn-primary {
+    background: var(--primary);
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.navbar-light .btn-primary:hover {
+    background: linear-gradient(135deg, #2509f9, #3a46b0); /* Reverse gradient effect */
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0px 4px 15px rgba(58, 70, 176, 0.5); /* Blue glowing effect */
+}
+
+/* Mobile Navbar adjustments */
+@media (max-width: 991.98px) {
+    .navbar-light .navbar-nav .nav-link {
+        margin-right: 0;
+        padding: 10px 15px;
+    }
+
+    .navbar-light .navbar-nav {
+        border-top: 1px solid #EEEEEE;
+    }
+}
+
+/* Sticky navbar effect */
+.navbar-light.sticky-top {
+    top: -100px;
+    transition: .5s;
+}
+
+/* Dropdown hover effect */
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        margin-top: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+    .navbar .dropdown-menu.fade-down {
+        top: 100%;
+        transform: rotateX(-75deg);
+        transform-origin: 0% 0%;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        top: 100%;
+        transform: rotateX(0deg);
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+
+/* General Carousel Styling */
+.carousel {
+    position: relative;
+}
+
+/* Carousel Images with Fade Effect */
+.carousel-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    height: 600px; /* Adjust height */
+    object-fit: cover; /* Ensures images fill the area */
+    animation: fadeIn 1.5s ease-in-out; /* Smooth fade effect */
+    width: 100%;
+}
+
+/* Permanent Black Overlay */
+.carousel-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust opacity for darkness */
+    z-index: 1;
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(1.1); /* Slight zoom-in effect */
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Carousel Caption (Text & Buttons) */
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    text-align: left;
+    animation: fadeInText 1.2s ease-in-out;
+    z-index: 2; /* Ensures text is above the overlay */
+}
+
+/* Fade-in animation for captions */
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header Section */
+.container-fluid.bg-primary {
+    position: relative;
+    background: linear-gradient(rgba(24, 29, 56, 0.7), rgba(24, 29, 56, 0.7)), url('./image/kust1.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 90%;
+    min-height: 300px; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+/* Breadcrumb Styling */
+.breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumb-item a {
+    color: #ffffff; /* White text for breadcrumb links */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.breadcrumb-item a:hover {
+    text-decoration: underline;
+    color: #f8f9fa; /* Slightly lighter white on hover */
+}
+
+.breadcrumb-item.active {
+    color: #e0e0e0; /* Light gray for the active page */
+}
+
+/* Heading Animation */
+.animated.slideInDown {
+    animation: slideInDown 1s ease-in-out;
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* Headings */
+.carousel-caption h5 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffd700; /* Gold */
+    text-transform: uppercase;
+}
+
+.carousel-caption h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* Buttons */
+.carousel-caption .btn {
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    padding: 10px 25px;
+    transition: all 0.3s ease-in-out;
+}
+
+.carousel-caption .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.carousel-caption .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.carousel-caption .btn-light {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.carousel-caption .btn-light:hover {
+    background-color: #ddd;
+}
+
+/* Carousel Controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 15px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .carousel-item img {
+        height: 450px;
+    }
+
+    .carousel-caption {
+        left: 5%;
+        top: 40%;
+        transform: translateY(-40%);
+    }
+
+    .carousel-caption h1 {
+        font-size: 2rem;
+    }
+
+    .carousel-caption h5 {
+        font-size: 1.2rem;
+    }
+
+    .carousel-caption .btn {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 400px;
+    }
+
+    .carousel-caption {
+        top: 35%;
+    }
+
+    .carousel-caption h1 {
+        font-size: 1.8rem;
+    }
+
+    .carousel-caption h5 {
+        font-size: 1rem;
+    }
+
+    .carousel-caption .btn {
+        padding: 6px 15px;
+        font-size: 0.8rem;
+    }
+}
+
+
+/* About Section */
+.container {
+    max-width: 1100px;
+}
+
+/* Section Title - Smooth, Modern, and Responsive */
+.section-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 8px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3); /* Smooth shadow */
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Start slightly lower */
+    animation: fadeSlideUp 1s ease-out forwards;
+}
+
+/* Add a subtle glow effect on hover */
+.section-title:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
+}
+
+/* Animated underline effect */
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: #0056b3;
+    transition: all 0.3s ease-in-out;
+    border-radius: 3px;
+}
+
+.section-title:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* About Image */
+.about-img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease-in-out;
+    opacity: 0; /* Initially hidden */
+    transform: scale(0.9); /* Start smaller */
+    animation: fadeZoomIn 1s ease-out forwards;
+    animation-delay: 0.3s; /* Slight delay */
+}
+
+.about-img img {
+    width: 100%;
+    height: 586px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.4s ease-in-out;
+}
+
+.about-img:hover {
+    transform: scale(1.05);
+}
+
+/* About List */
+.about-list p {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: fadeSlideRight 1s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+.about-list p i {
+    margin-right: 8px;
+    color: #007bff;
+}
+
+.about-list p:hover {
+    transform: translateX(5px);
+    color: #007bff;
+}
+
+/* Read More Button */
+.btn-primary {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border: none;
+    border-radius: 30px;
+    padding: 12px 25px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 5px 15px rgba(0, 123, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideUp 1s ease-out forwards;
+    animation-delay: 0.7s;
+}
+
+/* Button pulse effect */
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0056b3, #004499);
+    transform: scale(1.05);
+    box-shadow: 0px 5px 20px rgba(0, 123, 255, 0.5);
+}
+
+/* Button pulse animation */
+.btn-primary::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition: transform 0.4s ease-out;
+}
+
+.btn-primary:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .about-img {
+        margin-bottom: 20px;
+    }
+
+    .section-title {
+        font-size: 1rem;
+        padding: 5px 10px;
+    }
+}
+
+/* ===== ANIMATIONS ===== */
+
+/* Fade Slide Up */
+@keyframes fadeSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade Zoom In */
+@keyframes fadeZoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Fade Slide Right */
+@keyframes fadeSlideRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* Service Card Styling (Small Size) */
+.service-item {
+    background-color: #fff;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 123, 255, 0.2);
+    box-shadow: 0px 3px 8px rgba(0, 123, 255, 0.1);
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 12px;
+    position: relative;
+    overflow: hidden;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(30px); /* Start slightly lower */
+    animation: fadeSlideUp 1s ease-out forwards;
+}
+
+/* Hover Effect - Card Lift & Glow */
+.service-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 10px 25px rgba(0, 123, 255, 0.3);
+}
+
+/* Hover Effect - Icon Bounce & Rotate */
+.service-item i {
+    font-size: 2rem;
+    color: #007bff;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+}
+
+.service-item:hover i {
+    color: #0056b3;
+    transform: translateY(-5px) rotate(-10deg); /* Bounce and rotate */
+}
+
+/* Text Styling */
+.service-item h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeSlideUp 0.8s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+.service-item p {
+    font-size: 0.85rem;
+    flex-grow: 1;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeSlideUp 0.8s ease-out forwards;
+    animation-delay: 0.4s;
+}
+
+/* Hover Effect - Gradient Background */
+.service-item:hover {
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.15), rgba(0, 123, 255, 0.05));
+}
+
+/* Button Pulse Effect */
+.service-item .btn-primary {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeSlideUp 0.8s ease-out forwards;
+    animation-delay: 0.6s;
+}
+
+/* Button Hover Effect */
+.service-item .btn-primary:hover {
+    background: linear-gradient(135deg, #0056b3, #004499);
+    transform: scale(1.05);
+    box-shadow: 0px 5px 20px rgba(0, 123, 255, 0.5);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .service-item {
+        padding: 10px;
+    }
+
+    .service-item i {
+        font-size: 1.8rem;
+    }
+
+    .service-item h6 {
+        font-size: 0.9rem;
+    }
+
+    .service-item p {
+        font-size: 0.8rem;
+    }
+}
+
+/* ===== ANIMATIONS ===== */
+
+/* Fade Slide Up */
+@keyframes fadeSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =================================== office card css =================================*/
+.category {
+    background-color: #f8f9fa;
+}
+
+.category .section-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.category img {
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.category .position-relative {
+    position: relative;
+}
+
+.category .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    transform: translateY(100%);
+}
+
+.category .overlay h5 {
+    font-size: 1.25rem;
+    color: #343a40;
+    margin-bottom: 5px;
+}
+
+.category .overlay small {
+    color: #007bff;
+}
+
+.category a:hover .overlay {
+    transform: translateY(0);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.category a:hover img {
+    transform: scale(1.05);
+}
+
+.category .wow.zoomIn {
+    animation: zoomIn 0.5s ease-in-out;
+}
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Hover effects */
+.category a:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth transition for images */
+.category img {
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.category a:hover img {
+    transform: scale(1.1);
+    filter: brightness(0.85);
+}
+
+/* Optional: Add a shadow to make the images stand out */
+.category a {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.category a img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.category a:hover img {
+    transform: scale(1.1);
+    filter: brightness(0.85);
+}
+
+
+/* =================================== Gallery Section =================================*/
+.gallery-container {
+    display: flex; /* Enables flexbox */
+    flex-wrap: wrap; /* Allows items to wrap */
+    gap: 20px; /* Horizontal & vertical gap */
+    justify-content: center; /* Centers items */
+}
+
+/* Individual Gallery Item */
+.gallery-item {
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    flex: 1 1 calc(25% - 20px); /* 4 items per row, with spacing */
+}
+
+/* Image Styling with Permanent Fade Effect */
+.gallery-item img {
+    width: 100%;
+    filter: brightness(0.8); /* Permanent fade effect */
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+/* Card Lift Effect */
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 123, 255, 0.2);
+}
+
+/* Image Zoom on Hover */
+.gallery-item:hover img {
+    transform: scale(1.1);
+    filter: brightness(1); /* Brightens back to normal on hover */
+}
+
+/* Overlay Button (Always Visible with Smooth Fade-in) */
+.gallery-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Read More Button */
+.gallery-overlay a {
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+/* View More Button */
+.btn-primary {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 3px 10px rgba(0, 123, 255, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0056b3, #004499);
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .gallery-item {
+        flex: 1 1 calc(33.33% - 20px); /* 3 items per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-item {
+        flex: 1 1 calc(50% - 20px); /* 2 items per row */
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery-item {
+        flex: 1 1 100%; /* 1 item per row */
+    }
+}
+
+
+/*------------------------------------ Team Card Styling=---------------------------- */
+.team-item {
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
+
+/* Hover Effect */
+.team-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 123, 255, 0.3);
+}
+
+/* Image Styling */
+.team-item img {
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Social Media Buttons (Fixed Alignment) */
+.team-item .social-icons {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px; /* Adds spacing between icons */
+}
+
+/* Social Media Icons */
+.team-item .btn-sm {
+    border-radius: 50%; /* Makes icons fully circular */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    background-color: #007bff; /* Default color */
+    color: white;
+}
+
+/* Button Hover Effect */
+.team-item .btn-sm:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .team-item {
+        margin-bottom: 20px;
+    }
+
+    .team-item .social-icons {
+        bottom: 10px; /* Adjust position for smaller screens */
+    }
+
+    .team-item .btn-sm {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+
+/* --------------------------Testimonial Card Styling ---------------------------------*/
+.testimonial-section {
+    background-color: #f8f9fa;
+}
+
+.testimonial-section h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.testimonial-section .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-section .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-section .carousel-inner {
+    padding-bottom: 2rem;
+}
+
+.testimonial-section .carousel-item {
+    transition: opacity 0.5s ease;
+}
+
+.testimonial-section .carousel-control-prev-icon,
+.testimonial-section .carousel-control-next-icon {
+    background-color: #007bff;
+}
+
+.testimonial-section .rounded-circle {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-section .lead {
+    font-size: 1.25rem;
+}
+
+/* ----------------------------Contact us---------------------------------------- */
+.container-xxl {
+    padding: 50px 0;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 5px;
+    background: #fff;
+}
+
+/* Contact Box Icons */
+.d-flex.align-items-center .bg-primary {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+/* Contact Information Boxes */
+.d-flex.align-items-center {
+    margin-bottom: 15px;
+}
+
+/* Contact Form Inputs */
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+ 
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Dropdown Field */
+select.form-control {
+    cursor: pointer;
+}
+
+/* Textarea */
+textarea.form-control {
+    resize: none;
+}
+
+/* Google Map */
+iframe {
+    border-radius: 5px;
+    height: 400px !important; /* Increased height */
+    width: 100%;
+}
+
+/* Submit Button */
+.btn-primary {
+    background: #007bff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+/* reCAPTCHA Styling */
+.g-recaptcha {
+    margin-top: 10px;
+}
+
+/* Success/Error Messages */
+#messageResult {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    padding: 10px;
+    display: none;
+}
+
+#messageResult.success {
+    color: #28a745;
+}
+
+#messageResult.error {
+    color: #dc3545;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .d-flex.align-items-center {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .d-flex.align-items-center .bg-primary {
+        margin-bottom: 10px;
+    }
+}
+
+/* ================= Footer Styling ================= */
+.footer {
+    background: #1a1a1a;
+    color: #ffffff;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+/* Footer Headings */
+.footer h4 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.footer h4::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #007bff;
+    margin-top: 5px;
+}
+
+/* ================= Quick Links ================= */
+.footer .quick-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Adds spacing between links */
+}
+
+.footer .quick-links a {
+    color: #cccccc;
+    font-size: 1rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    padding: 5px 0;
+    position: relative;
+}
+
+/* Add hover effect with animation */
+.footer .quick-links a:hover {
+    color: #007bff;
+    text-decoration: none;
+    transform: translateX(5px); /* Slight movement */
+}
+
+/* Add small icon before each link */
+.footer .quick-links a::before {
+    content: "▶";  /* Arrow symbol */
+    font-size: 0.8rem;
+    color: #007bff;
+    margin-right: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer .quick-links a:hover::before {
+    margin-right: 15px; /* Moves icon slightly */
+}
+
+/* ================= Contact Section ================= */
+.footer .contact p {
+    color: #cccccc;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.footer .contact p i {
+    color: #007bff;
+    margin-right: 10px;
+}
+
+/* ================= Social Media Icons ================= */
+.btn-social {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-social i {
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.btn-social:hover {
+    background-color: #007bff;
+    border-color: #007bff;
+    transform: scale(1.1);
+}
+
+/* ================= Gallery Styling ================= */
+.footer .gallery {
+    display: flex;
+    gap: 5px;
+}
+
+.footer .gallery img {
+    width: 100%;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer .gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* ================= Newsletter Input & Button ================= */
+.footer .newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer .newsletter input {
+    border-radius: 25px;
+    padding: 12px 15px;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    border: none;
+}
+
+.footer .newsletter input:focus {
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+.footer .newsletter button {
+    border-radius: 25px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    width: 100%;
+}
+
+.footer .newsletter button:hover {
+    background: linear-gradient(135deg, #0056b3, #004499);
+    transform: scale(1.05);
+}
+
+/* ================= Footer Bottom ================= */
+.footer hr {
+    width: 90%;
+    margin: 20px auto;
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Footer Bottom Styling */
+.footer-bottom {
+    background: #111;
+    color: #ccc;
+    padding: 15px 0;
+    text-align: center;
+}
+
+/* Footer Menu */
+.footer-menu a {
+    margin-right: 15px;
+    font-weight: 500;
+    color: #cccccc;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-menu a:hover {
+    color: #007bff;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .footer .text-md-left,
+    .footer .text-md-right {
+        text-align: center !important;
+    }
+
+    .footer-menu {
+        margin-top: 10px;
+    }
+}
