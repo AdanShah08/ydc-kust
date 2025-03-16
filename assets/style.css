@@ -223,12 +223,12 @@ body {
     font-weight: bold !important;
     font-size: 1.9rem !important;
 }
-.carousel-caption .col-lg-8 h1.display-3 {
+/* .carousel-caption .col-lg-8 h1.display-3 {
     color: #f8f8f9 !important;
     font-family: 'Inria Serif', serif !important;
     font-weight: bold !important;
     font-size: 2.9rem !important;
-}
+} */
 /* Permanent Black Overlay */
 .carousel-item::before {
     content: "";
