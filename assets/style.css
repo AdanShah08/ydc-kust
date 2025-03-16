@@ -17,6 +17,92 @@
     z-index: 1050;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
+/* Announcement Modal Styling */
+#announcementModal .modal-content {
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    border: none;
+}
+
+/* Header Styling */
+#announcementModal .modal-header {
+    background: linear-gradient(135deg, #3a46b0, #2509f9); /* Blue gradient */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Title Styling - Force White */
+#announcementModal .modal-header h5 {
+    font-size: 20px;
+    font-weight: bold;
+    color: white !important; /* Ensure h5 title is always white */
+}
+
+/* Close Button Styling */
+#announcementModal .close {
+    color: white;
+    opacity: 1;
+    font-size: 22px;
+    transition: color 0.3s ease-in-out;
+}
+
+#announcementModal .close:hover {
+    color: #ffd700; /* Gold color on hover */
+}
+
+/* Modal Body Styling */
+#announcementModal .modal-body {
+    font-size: 16px;
+    color: #333;
+    padding: 20px;
+    line-height: 1.5;
+}
+
+/* Highlighted Text */
+#announcementModal .modal-body strong {
+    color: #2509f9; /* Strong Blue */
+}
+
+/* Button Styling - No Animation */
+#announcementModal .modal-footer {
+    border-top: none;
+    justify-content: center;
+    padding: 15px;
+}
+
+#announcementModal .btn-primary {
+    background: linear-gradient(135deg, #2509f9, #3a46b0);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: none !important; /* Removes all transition effects */
+}
+
+/* Force Remove Button Animation */
+#announcementModal .btn-primary:hover {
+    background: linear-gradient(135deg, #3a46b0, #2509f9) !important;
+    box-shadow: none !important;
+    transform: none !important;
+    transition: none !important;
+}
+
+/* Fade-in Animation for Modal */
+@keyframes fadeInModal {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#announcementModal .modal-content {
+    animation: fadeInModal 0.5s ease-in-out;
+}
 
 /* Hide Spinner After Page Loads */
 #spinner.hide {
