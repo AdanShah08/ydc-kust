@@ -69,7 +69,7 @@
     color: #2509f9;
 }
 
-/* Button Styling - NO ANIMATIONS */
+/* Button Styling - No Animation */
 #announcementModal .modal-footer {
     border-top: none;
     justify-content: center;
@@ -92,22 +92,6 @@
     box-shadow: none !important;
     transform: none !important;
     transition: none !important;
-}
-
-/* Fade-in Animation for Modal */
-@keyframes fadeInModal {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-#announcementModal .modal-content {
-    animation: fadeInModal 0.5s ease-in-out;
 }
 
 /* General Styling */
@@ -171,7 +155,7 @@ body {
     margin-top: 12px !important;
 }
 
-/* Join Now Button - NO ANIMATIONS */
+/* Join Now Button - No Animations */
 .navbar-light .btn-primary {
     background: var(--primary);
     color: white;
@@ -216,30 +200,6 @@ body {
     transition: 0.5s;
 }
 
-/* Dropdown hover effect */
-@media (min-width: 992px) {
-    .navbar .nav-item .dropdown-menu {
-        display: block;
-        margin-top: 0;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-    }
-
-    .navbar .dropdown-menu.fade-down {
-        top: 100%;
-        transform: rotateX(-75deg);
-        transform-origin: 0% 0%;
-    }
-
-    .navbar .nav-item:hover .dropdown-menu {
-        top: 100%;
-        transform: rotateX(0deg);
-        visibility: visible;
-        opacity: 1;
-    }
-}
-
 /* General Carousel Styling */
 .carousel {
     position: relative;
@@ -252,9 +212,9 @@ body {
 }
 
 .carousel-item img {
-    height: 600px; /* Adjust height */
-    object-fit: cover; /* Ensures images fill the area */
-    animation: fadeIn 1.5s ease-in-out; /* Smooth fade effect */
+    height: 600px;
+    object-fit: cover;
+    animation: fadeIn 1.5s ease-in-out;
     width: 100%;
 }
 
@@ -266,7 +226,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Adjust opacity for darkness */
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
@@ -274,7 +234,7 @@ body {
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: scale(1.1); /* Slight zoom-in effect */
+        transform: scale(1.1);
     }
     to {
         opacity: 1;
@@ -290,7 +250,7 @@ body {
     transform: translateY(-50%);
     text-align: left;
     animation: fadeInText 1.2s ease-in-out;
-    z-index: 2; /* Ensures text is above the overlay */
+    z-index: 2;
 }
 
 /* Fade-in animation for captions */
@@ -305,6 +265,9 @@ body {
     }
 }
 
+
+
+
 /* Header Section */
 .container-fluid.bg-primary {
     position: relative;
@@ -313,7 +276,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     width: 90%;
-    min-height: 300px; /* Adjust height as needed */
+    min-height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -328,18 +291,18 @@ body {
 }
 
 .breadcrumb-item a {
-    color: #ffffff; /* White text for breadcrumb links */
+    color: #ffffff;
     text-decoration: none;
     font-weight: 600;
 }
 
 .breadcrumb-item a:hover {
     text-decoration: underline;
-    color: #f8f9fa; /* Slightly lighter white on hover */
+    color: #f8f9fa;
 }
 
 .breadcrumb-item.active {
-    color: #e0e0e0; /* Light gray for the active page */
+    color: #e0e0e0;
 }
 
 /* Heading Animation */
@@ -358,13 +321,12 @@ body {
     }
 }
 
-
 /* Headings */
 .carousel-caption h5 {
     font-family: 'Poppins', sans-serif;
     font-size: 1.5rem;
     font-weight: 600;
-    color: #ffd700; /* Gold */
+    color: #ffd700;
     text-transform: uppercase;
 }
 
@@ -375,13 +337,13 @@ body {
     color: #fff;
 }
 
-/* Buttons */
+/* Buttons - Remove All Animations */
 .carousel-caption .btn {
     border-radius: 25px;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     padding: 10px 25px;
-    transition: all 0.3s ease-in-out;
+    transition: none !important; /* Remove all transitions */
 }
 
 .carousel-caption .btn-primary {
@@ -390,18 +352,20 @@ body {
 }
 
 .carousel-caption .btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-    transform: scale(1.05);
+    background-color: #0056b3 !important;
+    border-color: #0056b3 !important;
+    transform: none !important;
+    box-shadow: none !important;
 }
 
+/* Light Button */
 .carousel-caption .btn-light {
     background-color: #f8f9fa;
     color: #333;
 }
 
 .carousel-caption .btn-light:hover {
-    background-color: #ddd;
+    background-color: #ddd !important;
 }
 
 /* Carousel Controls */
@@ -466,13 +430,12 @@ body {
     }
 }
 
-
 /* About Section */
 .container {
     max-width: 1100px;
 }
 
-/* Section Title - Smooth, Modern, and Responsive */
+/* Section Title */
 .section-title {
     font-size: 1.2rem;
     font-weight: 600;
@@ -482,37 +445,11 @@ body {
     padding: 8px 18px;
     border-radius: 8px;
     display: inline-block;
-    position: relative;
-    overflow: hidden;
     transition: all 0.4s ease-in-out;
-    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3); /* Smooth shadow */
-    opacity: 0; /* Initially hidden */
-    transform: translateY(20px); /* Start slightly lower */
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    opacity: 0;
+    transform: translateY(20px);
     animation: fadeSlideUp 1s ease-out forwards;
-}
-
-/* Add a subtle glow effect on hover */
-.section-title:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
-}
-
-/* Animated underline effect */
-.section-title::after {
-    content: "";
-    position: absolute;
-    bottom: -4px;
-    left: 50%;
-    width: 0;
-    height: 3px;
-    background: #0056b3;
-    transition: all 0.3s ease-in-out;
-    border-radius: 3px;
-}
-
-.section-title:hover::after {
-    width: 100%;
-    left: 0;
 }
 
 /* About Image */
@@ -522,10 +459,10 @@ body {
     border-radius: 10px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.4s ease-in-out;
-    opacity: 0; /* Initially hidden */
-    transform: scale(0.9); /* Start smaller */
+    opacity: 0;
+    transform: scale(0.9);
     animation: fadeZoomIn 1s ease-out forwards;
-    animation-delay: 0.3s; /* Slight delay */
+    animation-delay: 0.3s;
 }
 
 .about-img img {
@@ -533,11 +470,6 @@ body {
     height: 586px;
     object-fit: cover;
     border-radius: 10px;
-    transition: transform 0.4s ease-in-out;
-}
-
-.about-img:hover {
-    transform: scale(1.05);
 }
 
 /* About List */
@@ -557,52 +489,27 @@ body {
     color: #007bff;
 }
 
-.about-list p:hover {
-    transform: translateX(5px);
-    color: #007bff;
-}
-
-/* Read More Button */
+/* Read More Button - Remove Animation */
 .btn-primary {
     background: linear-gradient(135deg, #007bff, #0056b3);
     border: none;
     border-radius: 30px;
     padding: 12px 25px;
     font-weight: bold;
-    transition: all 0.3s ease-in-out;
     box-shadow: 0px 5px 15px rgba(0, 123, 255, 0.3);
-    position: relative;
-    overflow: hidden;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeSlideUp 1s ease-out forwards;
-    animation-delay: 0.7s;
+    transition: none !important;
 }
 
-/* Button pulse effect */
+/* Remove Hover Animation */
 .btn-primary:hover {
-    background: linear-gradient(135deg, #0056b3, #004499);
-    transform: scale(1.05);
-    box-shadow: 0px 5px 20px rgba(0, 123, 255, 0.5);
+    background: linear-gradient(135deg, #0056b3, #004499) !important;
+    transform: none !important;
+    box-shadow: none !important;
 }
 
-/* Button pulse animation */
+/* Remove Pulse Animation */
 .btn-primary::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 120%;
-    height: 120%;
-    background: rgba(255, 255, 255, 0.2);
-    transform: translate(-50%, -50%) scale(0);
-    border-radius: 50%;
-    transition: transform 0.4s ease-out;
-}
-
-.btn-primary:hover::before {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0;
+    display: none !important;
 }
 
 /* Responsive Adjustments */
@@ -654,7 +561,6 @@ body {
         transform: translateX(0);
     }
 }
-
 
 /* Service Card Styling (Small Size) */
 .service-item {
