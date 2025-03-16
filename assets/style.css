@@ -200,7 +200,7 @@ body {
     transition: 0.5s;
 }
 
-/* General Carousel Styling */
+/* ---------------------------General Carousel Styling */
 .carousel {
     position: relative;
 }
@@ -217,7 +217,18 @@ body {
     animation: fadeIn 1.5s ease-in-out;
     width: 100%;
 }
-
+.carousel-caption .col-lg-8 h5.text-primary {
+    color: #007bff !important;
+    font-family: 'Inria Serif', serif !important;
+    font-weight: bold !important;
+    font-size: 1.9rem !important;
+}
+.carousel-caption .col-lg-8 h1.display-3 {
+    color: #f8f8f9 !important;
+    font-family: 'Inria Serif', serif !important;
+    font-weight: bold !important;
+    font-size: 2.9rem !important;
+}
 /* Permanent Black Overlay */
 .carousel-item::before {
     content: "";
