@@ -44,6 +44,13 @@ body {
     color: #333;
     background-color: #f8f9fa;
 }
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
 /* Navbar dropdown arrow */
 .navbar .dropdown-toggle::after {
     border: none;
@@ -51,69 +58,97 @@ body {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     vertical-align: middle;
-    margin-left: 8px;
+    margin-left: 6px;
 }
 
-/* Navbar link styles */
+/* Navbar link styles - Reduced spacing */
 .navbar-light .navbar-nav .nav-link {
-    margin-right: 30px;
-    padding: 15px 20px;
+    margin-right: 15px;
+    padding: 12px 16px;
     color: #040406;
-    font-size: 15px;
+    font-size: 14px;
     text-transform: uppercase;
     outline: none;
     position: relative;
     transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
-    border-radius: 5px; /* Rounded corners for smooth effect */
+    border-radius: 5px;
 }
 
 /* Hover and active state with blue-themed effect */
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link.active {
     color: white;
-    background: linear-gradient(135deg, #3a46b0, #2509f9); 
-    box-shadow: 0px 4px 15px rgba(37, 9, 249, 0.4); 
+    background: linear-gradient(135deg, #3a46b0, #2509f9);
+    box-shadow: 0px 4px 10px rgba(37, 9, 249, 0.3);
 }
 
 /* Navbar shadow effect */
 .navbar {
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
-    background: white; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background: white;
+    padding: 10px 0;
 }
 
-/* Join Now Button */
+/* Logo Styling */
+.navbar-brand img {
+    height: 45px;
+    width: auto;
+    margin-right: 8px;
+    margin-top: 10px !important;
+}
+
+/* H2 (YDC Text) Styling */
+.navbar-brand h2 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #3a46b0;
+    margin-top: 12px !important;
+}
+
+/* Join Now Button - No Animations */
 .navbar-light .btn-primary {
     background: var(--primary);
     color: white;
     border-radius: 5px;
     padding: 10px 20px;
-    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+    transition: none !important;
 }
 
+/* Remove Button Animation */
 .navbar-light .btn-primary:hover {
-    background: linear-gradient(135deg, #2509f9, #3a46b0); /* Reverse gradient effect */
-    transform: scale(1.05); /* Slight zoom effect */
-    box-shadow: 0px 4px 15px rgba(58, 70, 176, 0.5); /* Blue glowing effect */
+    background: linear-gradient(135deg, #2509f9, #3a46b0) !important;
+    transform: none !important;
+    box-shadow: none !important;
+    transition: none !important;
 }
 
 /* Mobile Navbar adjustments */
 @media (max-width: 991.98px) {
     .navbar-light .navbar-nav .nav-link {
         margin-right: 0;
-        padding: 10px 15px;
+        padding: 10px 12px;
     }
 
     .navbar-light .navbar-nav {
         border-top: 1px solid #EEEEEE;
+    }
+
+    .navbar-toggler {
+        margin-right: 15px;
+    }
+
+    /* Adjustments for mobile navbar */
+    .navbar-brand h2 {
+        font-size: 18px;
+        margin-top: 8px !important;
     }
 }
 
 /* Sticky navbar effect */
 .navbar-light.sticky-top {
     top: -100px;
-    transition: .5s;
+    transition: 0.5s;
 }
-
 /* Dropdown hover effect */
 @media (min-width: 992px) {
     .navbar .nav-item .dropdown-menu {

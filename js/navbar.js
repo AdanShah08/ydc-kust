@@ -1,11 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Navbar Active Link Highlighting
-    let currentLocation = window.location.pathname.split("/").pop();
+    // Get current page path without query parameters or hash fragments
+    let currentLocation = window.location.pathname.split("/").pop().split("?")[0].split("#")[0];
+
+    // If no file name (e.g., "example.com/"), default to "index.html"
+    if (currentLocation === "" || currentLocation === "/") {
+        currentLocation = "index.html";
+    }
+
+    // Get all navbar links
     let navLinks = document.querySelectorAll(".navbar-nav .nav-link");
 
     navLinks.forEach(link => {
+        // Remove active class from all links
         link.classList.remove("active");
-        let linkPath = link.getAttribute("href").split("/").pop();
+
+        // Extract only the filename from the href
+        let linkPath = link.getAttribute("href").split("/").pop().split("?")[0].split("#")[0];
+
+        // Check if the link matches the current page
         if (linkPath === currentLocation) {
             link.classList.add("active");
         }
