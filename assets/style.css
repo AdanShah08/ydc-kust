@@ -52,34 +52,52 @@ body {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     vertical-align: middle;
-    margin-left: 8px;
+    margin-left: 6px;
 }
 
-/* Navbar link styles */
+/* Navbar link styles - Reduced spacing */
 .navbar-light .navbar-nav .nav-link {
-    margin-right: 30px;
-    padding: 15px 20px;
+    margin-right: 15px;
+    padding: 12px 16px;
     color: #040406;
-    font-size: 15px;
+    font-size: 14px;
     text-transform: uppercase;
     outline: none;
     position: relative;
     transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
-    border-radius: 5px; /* Rounded corners for smooth effect */
+    border-radius: 5px;
 }
 
 /* Hover and active state with blue-themed effect */
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link.active {
     color: white;
-    background: linear-gradient(135deg, #3a46b0, #2509f9); 
-    box-shadow: 0px 4px 15px rgba(37, 9, 249, 0.4); 
+    background: linear-gradient(135deg, #3a46b0, #2509f9);
+    box-shadow: 0px 4px 10px rgba(37, 9, 249, 0.3);
+    transition: all 0.3s ease-in-out;
 }
 
 /* Navbar shadow effect */
 .navbar {
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
-    background: white; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background: white;
+    padding: 10px 0;
+}
+
+/* Logo Styling */
+.navbar-brand img {
+    height: 45px;
+    width: auto;
+    margin-right: 8px;
+    margin-top: 10px !important; /* Added margin from top */
+}
+
+/* H2 (YDC Text) Styling */
+.navbar-brand h2 {
+    font-size: 20px; /* Adjust font size */
+    font-weight: 600; /* Make it bold */
+    color: #3a46b0; /* Ensure primary color */
+    margin-top: 12px !important; /* Added margin from top */
 }
 
 /* Join Now Button */
@@ -92,27 +110,37 @@ body {
 }
 
 .navbar-light .btn-primary:hover {
-    background: linear-gradient(135deg, #2509f9, #3a46b0); /* Reverse gradient effect */
-    transform: scale(1.05); /* Slight zoom effect */
-    box-shadow: 0px 4px 15px rgba(58, 70, 176, 0.5); /* Blue glowing effect */
+    background: linear-gradient(135deg, #2509f9, #3a46b0);
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(58, 70, 176, 0.5);
 }
 
 /* Mobile Navbar adjustments */
 @media (max-width: 991.98px) {
     .navbar-light .navbar-nav .nav-link {
         margin-right: 0;
-        padding: 10px 15px;
+        padding: 10px 12px;
     }
 
     .navbar-light .navbar-nav {
         border-top: 1px solid #EEEEEE;
+    }
+
+    .navbar-toggler {
+        margin-right: 15px;
+    }
+
+    /* Adjustments for mobile navbar */
+    .navbar-brand h2 {
+        font-size: 18px;
+        margin-top: 8px !important; /* Smaller margin for mobile */
     }
 }
 
 /* Sticky navbar effect */
 .navbar-light.sticky-top {
     top: -100px;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 /* Dropdown hover effect */
@@ -138,7 +166,6 @@ body {
         opacity: 1;
     }
 }
-
 
 /* General Carousel Styling */
 .carousel {
