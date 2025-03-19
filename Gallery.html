@@ -92,109 +92,67 @@
             <!-- Gallery Section -->
 
 
-        <div class="container py-5">
-            <div class="container">
-                <div class="text-center">
-                    <h6 class="section-title text-primary px-3">Our Work</h6>
-                    <h1 class="mb-5">Gallery</h1>
-                </div>
-                <div class="row g-4 justify-content-center">
-                    <!-- Gallery Item 1 -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="gallery-item bg-light">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid" src="./assets/image/GALLERY 1.jpg" alt="Gallery Image">
-                                <div class="gallery-overlay">
-                                    <a href="#" class="btn btn-sm btn-primary px-3">Read More</a>
-                                </div>
-                            </div>
-                        </div>
+            
+            
+            <div class="container py-5">
+                <div class="container">
+                    <div class="text-center">
+                        <h6 class="section-title text-primary px-3">Our Work</h6>
+                        <h1 class="mb-5">Gallery</h1>
                     </div>
-                    <!-- Gallery Item 2 -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="gallery-item bg-light">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid" src="./assets/image/slider image.jpg" alt="Gallery Image">
-                                <div class="gallery-overlay">
-                                    <a href="#" class="btn btn-sm btn-primary px-3">Read More</a>
-                                </div>
-                            </div>
-                        </div>
+                    
+                    <div id="gallery-container" class="row g-4 justify-content-center">
+                        <!-- Initial 8 Gallery Items -->
                     </div>
-                    <!-- Gallery Item 3 -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="gallery-item bg-light">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid" src="./assets/image/slider2 .jpg" alt="Gallery Image">
-                                <div class="gallery-overlay">
-                                    <a href="#" class="btn btn-sm btn-primary px-3">Read More</a>
-                                </div>
-                            </div>
-                        </div>
+            
+                    <!-- Centered Button -->
+                    <div class="d-flex justify-content-center">
+                        <button id="viewMoreBtn" class="btn btn-primary py-3 px-5 mt-4">View More</button>
                     </div>
-                    <!-- Gallery Item 4 -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="gallery-item bg-light">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid" src="./assets/image/GALLERY 2.jpg" alt="Gallery Image">
-                                <div class="gallery-overlay">
-                                    <a href="#" class="btn btn-sm btn-primary px-3">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Gallery Item 5 -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="gallery-item bg-light">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid" src="./assets/image/GALLERY 3.jpg" alt="Gallery Image">
-                                <div class="gallery-overlay">
-                                    <a href="#" class="btn btn-sm btn-primary px-3">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Gallery Item 6 -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="gallery-item bg-light">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid" src="./assets/image/GALLERY 4.jpg" alt="Gallery Image">
-                                <div class="gallery-overlay">
-                                    <a href="#" class="btn btn-sm btn-primary px-3">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Gallery Item 7 -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="gallery-item bg-light">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid" src="./assets/image/GALLERY 5.jpg" alt="Gallery Image">
-                                <div class="gallery-overlay">
-                                    <a href="#" class="btn btn-sm btn-primary px-3">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Gallery Item 8 -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="gallery-item bg-light">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid" src="./assets/image/GALLERY 6.jpg" alt="Gallery Image">
-                                <div class="gallery-overlay">
-                                    <a href="#" class="btn btn-sm btn-primary px-3">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        
-                <!-- Centered Button -->
-                <div class="d-flex justify-content-center">
-                    <a class="btn btn-primary py-3 px-5 mt-4" href="Gallery.html">View More</a>
                 </div>
             </div>
-        </div>
+            
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    let galleryContainer = document.getElementById('gallery-container');
+                    let viewMoreBtn = document.getElementById('viewMoreBtn');
+                    let totalImages = 60; // Total images available
+                    let imagesLoaded = 0; // Track how many images are loaded
+                    let imagesPerLoad = 8; // Load 8 images each time
+            
+                    function loadImages() {
+                        let newItems = '';
+            
+                        for (let i = 1; i <= imagesPerLoad; i++) {
+                            if (imagesLoaded >= totalImages) {
+                                viewMoreBtn.style.display = "none"; // Hide button if no more images
+                                break;
+                            }
+            
+                            newItems += `
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="gallery-item bg-light">
+                                        <div class="position-relative overflow-hidden">
+                                            <img class="img-fluid" src="./assets/image/GALLERY ${imagesLoaded + 1}.jpg" alt="Gallery Image">
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                            imagesLoaded++;
+                        }
+            
+                        galleryContainer.innerHTML += newItems;
+                    }
+            
+                    // Load initial 8 images
+                    loadImages();
+            
+                    // Load more images on button click
+                    viewMoreBtn.addEventListener('click', loadImages);
+                });
+            </script>
+            
+            
         
 
 <!-- Footer Start -->
